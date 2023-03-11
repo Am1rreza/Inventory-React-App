@@ -2,10 +2,43 @@ import { useState } from "react";
 
 const CategoryForm = () => {
   const [isShow, setIsShow] = useState(false);
+  const [categories, setCategories] = useState([]);
+  const [categoryFormData, setCategoryFormData] = useState({
+    title: "",
+    description: "",
+  });
 
   // Handlers
   const cancelFormHandler = (e) => {
     e.preventDefault();
+    setIsShow(false);
+  };
+
+  const changeHandler = (e) => {
+    setCategoryFormData({
+      ...categoryFormData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const addNewCategoryHandler = (e) => {
+    e.preventDefault();
+
+    if (!categoryFormData.title || !categoryFormData.description)
+      return alert("Please fill the form !");
+
+    const newCategory = {
+      ...categoryFormData,
+      createdAt: new Date().toISOString(),
+    };
+
+    setCategories([...categories, newCategory]);
+
+    setCategoryFormData({
+      title: "",
+      description: "",
+    });
+
     setIsShow(false);
   };
 
@@ -24,8 +57,10 @@ const CategoryForm = () => {
               Title
             </label>
             <input
+              value={categoryFormData.title}
+              onChange={changeHandler}
               type="text"
-              name="category-title"
+              name="title"
               id="category-title"
               className="bg-transparent rounded border border-slate-500 text-slate-400"
             />
@@ -38,7 +73,9 @@ const CategoryForm = () => {
               Description
             </label>
             <textarea
-              name="category-description"
+              value={categoryFormData.description}
+              onChange={changeHandler}
+              name="description"
               id="category-description"
               className="bg-transparent rounded border border-slate-500 text-slate-400 resize-none w-full"
             ></textarea>
@@ -52,6 +89,7 @@ const CategoryForm = () => {
               Cancel
             </button>
             <button
+              onClick={addNewCategoryHandler}
               id="add-new-category"
               className="flex-1 bg-slate-500 text-slate-200 rounded-md py-2"
             >
