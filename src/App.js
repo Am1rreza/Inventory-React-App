@@ -33,7 +33,9 @@ const categories = [
 function App() {
   return (
     <div className="App">
-      <NavBar />
+      <div class="bg-slate-800 min-h-screen">
+        <NavBar />
+      </div>
     </div>
   );
 }
