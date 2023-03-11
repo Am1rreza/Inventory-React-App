@@ -42,7 +42,7 @@ function App() {
         <NavBar />
         <div className="container max-w-screen-sm mx-auto px-4">
           <CategoryForm categories={categories} setCategories={setCategories} />
-          <ProductForm />
+          <ProductForm categories={categories} />
         </div>
       </div>
     </div>

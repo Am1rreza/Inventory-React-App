@@ -28,6 +28,7 @@ const CategoryForm = ({ categories, setCategories }) => {
 
     const newCategory = {
       ...categoryFormData,
+      id: new Date().getTime(),
       createdAt: new Date().toISOString(),
     };
 

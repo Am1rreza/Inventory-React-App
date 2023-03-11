@@ -1,4 +1,4 @@
-const ProductForm = () => {
+const ProductForm = ({ categories }) => {
   return (
     <div className="">
       <h2 className="text-xl text-slate-300 font-bold mb-2">Add New Product</h2>
@@ -43,6 +43,17 @@ const ProductForm = () => {
             <option className="bg-slate-500 text-slate-300" value="">
               Select a Category
             </option>
+            {categories.map((category) => {
+              return (
+                <option
+                  key={category.id}
+                  className="bg-slate-500 text-slate-300"
+                  value={category.id}
+                >
+                  {category.title}
+                </option>
+              );
+            })}
           </select>
         </div>
         <div className="flex items-center justify-between gap-x-4">
