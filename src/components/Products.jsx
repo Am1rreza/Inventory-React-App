@@ -39,7 +39,11 @@ const ProductForm = () => {
             name="product-category"
             id="product-category"
             className="w-full bg-transparent rounded border border-slate-500 text-slate-400"
-          ></select>
+          >
+            <option className="bg-slate-500 text-slate-300" value="">
+              Select a Category
+            </option>
+          </select>
         </div>
         <div className="flex items-center justify-between gap-x-4">
           <button
