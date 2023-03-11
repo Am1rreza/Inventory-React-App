@@ -1,8 +1,7 @@
 import { useState } from "react";
 
-const CategoryForm = () => {
+const CategoryForm = ({ categories, setCategories }) => {
   const [isShow, setIsShow] = useState(false);
-  const [categories, setCategories] = useState([]);
   const [categoryFormData, setCategoryFormData] = useState({
     title: "",
     description: "",
