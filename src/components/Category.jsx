@@ -1,13 +1,26 @@
+import { useState } from "react";
+
 const CategoryForm = () => {
+  const [isShow, setIsShow] = useState(false);
+
+  // Handlers
+  const cancelFormHandler = (e) => {
+    e.preventDefault();
+    setIsShow(false);
+  };
+
   return (
     <section>
-      <div className="mb-4 hidden" id="category-wrapper">
+      <div className={`mb-4 ${isShow ? "" : "hidden"}`} id="category-wrapper">
         <h2 className="text-xl text-slate-300 font-bold mb-2">
           Add New Category
         </h2>
         <form className="bg-slate-700 p-4 rounded-lg flex flex-col gap-y-4">
           <div>
-            <label for="category-title" className="block mb-1 text-slate-400">
+            <label
+              htmlFor="category-title"
+              className="block mb-1 text-slate-400"
+            >
               Title
             </label>
             <input
@@ -19,7 +32,7 @@ const CategoryForm = () => {
           </div>
           <div>
             <label
-              for="category-description"
+              htmlFor="category-description"
               className="block mb-1 text-slate-400"
             >
               Description
@@ -32,6 +45,7 @@ const CategoryForm = () => {
           </div>
           <div className="flex items-center justify-between gap-x-4">
             <button
+              onClick={cancelFormHandler}
               id="cancel-add-category"
               className="flex-1 border border-slate-400 text-slate-300 rounded-md py-2"
             >
@@ -47,8 +61,11 @@ const CategoryForm = () => {
         </form>
       </div>
       <button
+        onClick={() => setIsShow(!isShow)}
         id="toggle-add-category"
-        className="text-slate-500 font-medium text-lg mb-4"
+        className={`text-slate-500 font-medium text-lg mb-4 ${
+          isShow && "hidden"
+        }`}
       >
         Add New Category?
       </button>

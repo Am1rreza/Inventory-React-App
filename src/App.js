@@ -34,9 +34,9 @@ const categories = [
 function App() {
   return (
     <div className="App">
-      <div class="bg-slate-800 min-h-screen">
+      <div className="bg-slate-800 min-h-screen">
         <NavBar />
-        <div class="container max-w-screen-sm mx-auto px-4">
+        <div className="container max-w-screen-sm mx-auto px-4">
           <CategoryForm />
         </div>
       </div>
