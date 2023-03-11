@@ -1,12 +1,11 @@
 import { useState } from "react";
 
-const ProductForm = ({ categories }) => {
+const ProductForm = ({ categories, products, setProducts }) => {
   const [productsFormData, setProductsFormData] = useState({
     title: "",
     quantity: "1",
     categoryId: "",
   });
-  const [products, setProducts] = useState([]);
 
   // Handlers
   const changeHandler = (e) => {
@@ -38,7 +37,7 @@ const ProductForm = ({ categories }) => {
   };
 
   return (
-    <div className="">
+    <div className="mb-4">
       <h2 className="text-xl text-slate-300 font-bold mb-2">Add New Product</h2>
       <form className="bg-slate-700 p-4 rounded-lg flex flex-col gap-y-4">
         <div>
@@ -110,7 +109,6 @@ const ProductForm = ({ categories }) => {
           </button>
         </div>
       </form>
-      <br /> <br />
     </div>
   );
 };
