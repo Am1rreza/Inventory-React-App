@@ -1,4 +1,5 @@
 import "./App.css";
+import NavBar from "./components/NavBar";
 
 const products = [
   {
@@ -30,7 +31,11 @@ const categories = [
 ];
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <NavBar />
+    </div>
+  );
 }
 
 export default App;
