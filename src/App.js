@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import CategoryForm from "./components/Category.jsx";
 import ProductForm from "./components/Products";
 import { useState } from "react";
+import ProductsList from "./components/ProductsList";
 
 function App() {
   const [categories, setCategories] = useState([]);
@@ -19,6 +20,7 @@ function App() {
             setProducts={setProducts}
             categories={categories}
           />
+          <ProductsList products={products} />
         </div>
       </div>
     </div>
