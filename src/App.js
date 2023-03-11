@@ -1,6 +1,7 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
 import CategoryForm from "./components/Category.jsx";
+import ProductForm from "./components/Products";
 
 const products = [
   {
@@ -38,6 +39,7 @@ function App() {
         <NavBar />
         <div className="container max-w-screen-sm mx-auto px-4">
           <CategoryForm />
+          <ProductForm />
         </div>
       </div>
     </div>
