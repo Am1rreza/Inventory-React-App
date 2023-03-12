@@ -64,6 +64,8 @@ const ProductForm = ({ categories, products, setProducts }) => {
             value={productsFormData.quantity}
             onChange={changeHandler}
             type="number"
+            min={"1"}
+            inputMode="decimal"
             name="quantity"
             id="product-quantity"
             className="bg-transparent rounded border border-slate-500 text-slate-400"
