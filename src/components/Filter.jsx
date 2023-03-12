@@ -1,4 +1,4 @@
-const Filter = () => {
+const Filter = ({ sort, search, onSort, onSearch }) => {
   return (
     <>
       <div className="flex items-center justify-between mb-6 mt-8">
@@ -6,6 +6,8 @@ const Filter = () => {
           Search
         </label>
         <input
+          value={search}
+          onChange={onSearch}
           type="text"
           name="search-input"
           id="search-input"
@@ -17,15 +19,17 @@ const Filter = () => {
           Sort
         </label>
         <select
+          onChange={onSort}
           name="sort-products"
           id="sort-products"
           className="bg-transparent text-slate-400 rounded"
+          value={sort}
         >
-          <option className="bg-slate-500 text-slate-300" value="newest" selected>
-            Newest
+          <option className="bg-slate-500 text-slate-300" value="latest">
+            Latest
           </option>
-          <option className="bg-slate-500 text-slate-300" value="oldest">
-            Oldest
+          <option className="bg-slate-500 text-slate-300" value="earliest">
+            Earliest
           </option>
         </select>
       </div>
