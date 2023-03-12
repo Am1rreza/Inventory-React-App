@@ -1,4 +1,8 @@
-const ProductsList = ({ products }) => {
+const ProductsList = ({ products, categories }) => {
+  const getCategoryTitle = (categoryId) => {
+    return categories.find((c) => c.id === parseInt(categoryId)).title;
+  };
+
   if (!products.length) {
     return (
       <>
@@ -26,7 +30,7 @@ const ProductsList = ({ products }) => {
                 {new Date(product.createdAt).toLocaleDateString("fa-IR")}
               </span>
               <span className="block px-3 py-0.5 text-slate-400 border border-slate-400 text-sm rounded-xl">
-                {}
+                {getCategoryTitle(product.categoryId)}
               </span>
 
               <span className="flex items-center justify-center w-7 h-7 rounded-full bg-slate-500 text-slate-300 border-2 border-slate-300">
