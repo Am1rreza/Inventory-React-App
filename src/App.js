@@ -4,6 +4,7 @@ import CategoryForm from "./components/Category.jsx";
 import ProductForm from "./components/Products";
 import { useState } from "react";
 import ProductsList from "./components/ProductsList";
+import Filter from "./components/Filter";
 
 function App() {
   const [categories, setCategories] = useState([]);
@@ -20,6 +21,7 @@ function App() {
             setProducts={setProducts}
             categories={categories}
           />
+          <Filter />
           <ProductsList
             setProducts={setProducts}
             products={products}
