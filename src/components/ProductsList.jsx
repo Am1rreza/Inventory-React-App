@@ -1,6 +1,15 @@
-const ProductsList = ({ products, categories }) => {
+const ProductsList = ({ setProducts, products, categories }) => {
+  // Handlers
   const getCategoryTitle = (categoryId) => {
     return categories.find((c) => c.id === parseInt(categoryId)).title;
+  };
+
+  const deleteProductHandler = (productId) => {
+    const filteredProducts = products.filter(
+      (p) => p.id !== parseInt(productId)
+    );
+
+    setProducts(filteredProducts);
   };
 
   if (!products.length) {
@@ -36,7 +45,10 @@ const ProductsList = ({ products, categories }) => {
               <span className="flex items-center justify-center w-7 h-7 rounded-full bg-slate-500 text-slate-300 border-2 border-slate-300">
                 {product.quantity}
               </span>
-              <button className="delete-product border px-3 py-0.5 rounded-xl border-red-400 text-red-400 text-sm">
+              <button
+                onClick={() => deleteProductHandler(product.id)}
+                className="delete-product border px-3 py-0.5 rounded-xl border-red-400 text-red-400 text-sm"
+              >
                 delete
               </button>
             </div>

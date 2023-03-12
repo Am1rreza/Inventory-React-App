@@ -20,7 +20,11 @@ function App() {
             setProducts={setProducts}
             categories={categories}
           />
-          <ProductsList products={products} categories={categories} />
+          <ProductsList
+            setProducts={setProducts}
+            products={products}
+            categories={categories}
+          />
         </div>
       </div>
     </div>
