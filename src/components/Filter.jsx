@@ -19,7 +19,7 @@ const Filter = ({
           type="text"
           name="search-input"
           id="search-input"
-          className="bg-transparent rounded border border-slate-500 text-slate-400"
+          className="bg-transparent rounded border border-slate-500 text-slate-400 w-40 sm:w-52"
         />
       </div>
       <div className="flex items-center justify-between mb-6">
@@ -30,7 +30,7 @@ const Filter = ({
           onChange={onSort}
           name="sort-products"
           id="sort-products"
-          className="bg-transparent text-slate-400 rounded"
+          className="bg-transparent text-slate-400 rounded w-40 sm:w-52"
           value={sort}
         >
           <option className="bg-slate-500 text-slate-300" value="latest">
@@ -49,7 +49,7 @@ const Filter = ({
           onChange={onSelectCategory}
           name="sort-products"
           id="sort-products"
-          className="bg-transparent text-slate-400 rounded"
+          className="bg-transparent text-slate-400 rounded w-40 sm:w-52"
           value={selectedCategory}
         >
           <option className="bg-slate-500 text-slate-300" value="">All</option>
